@@ -154,7 +154,7 @@
         <header>
             <h1 class="editable">Project Portfolio</h1>
             <div class="subtitle editable"><strong>Fleurine Jaegler</strong> • AI & Optimization Engineer</div>
-            <div class="subtitle editable">GitHub: github.com/fleurine-jaegler</div>
+            <div class="subtitle editable">GitHub: github.com/fleurinejaegler</div>
             <p class="intro editable">A selection of my most impactful projects spanning full-stack development, supply chain optimization, and machine learning.</p>
         </header>
 
@@ -239,8 +239,83 @@
             </ul>
         </div>
 
+        <div class="divider"></div>
+
+        <div class="project">
+            <h2 class="editable">4. DrozyAI — On-Device Drowsiness Detection with LLM Advisor</h2>
+            <div class="project-meta">
+                <div><strong>Role:</strong> <span class="editable">Co-builder (team of four, ASUS Local AI Hackathon, 24 h); original idea</span></div>
+                <div><strong>Performance:</strong> <span class="editable">513 ms end-to-end time-to-alert, fully on-device</span></div>
+            </div>
+
+            <h3 class="editable">Overview</h3>
+            <p class="editable">An offline driver-safety system that fuses smartwatch heart-rate variability (RMSSD) with facial video to detect drowsiness. A local LLM (Llama 3.2 3B via Ollama) explains each alert, while deterministic rules decide the action, so the model never controls safety-critical decisions.</p>
+
+            <h3 class="editable">Technical Approach</h3>
+            <ul>
+                <li class="editable">Multimodal fusion: gradient boosting baseline and GRU/TCN sequence models over watch and video features</li>
+                <li class="editable">Advisor design: rule-based action selection, with the LLM producing structured JSON explanations and a fallback if it fails</li>
+                <li class="editable">Evaluation: participant-separated 5-fold cross-validation across 19 drivers and 35 sessions, to avoid leakage between a driver's train and test data</li>
+            </ul>
+
+            <h3 class="editable">Stack</h3>
+            <ul>
+                <li class="editable">Python, Ollama, scikit-learn, Garmin Connect companion (HTTPS), iOS relay app</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="project">
+            <h2 class="editable">5. Cal'm — Safe Route Home (Safety-Aware Walking Routes)</h2>
+            <div class="project-meta">
+                <div><strong>Role:</strong> <span class="editable">Team project, hackathon prototype [ton rôle précis]</span></div>
+                <div><strong>Type:</strong> <span class="editable">Night-time walking app for UC Berkeley students</span></div>
+            </div>
+
+            <h3 class="editable">Overview</h3>
+            <p class="editable">A walking-route app that answers a simple question: the fastest route is not always the safest. It computes a route using open data on street lighting, nearby help points and late-night activity, and explains why it chose it.</p>
+
+            <h3 class="editable">Technical Approach</h3>
+            <ul>
+                <li class="editable">Walking graph built from OpenStreetMap with per-segment safety features (lighting, POIs, crime and 311 data)</li>
+                <li class="editable">A* routing with a safety-aware cost, returning an explained alternative to the fastest path</li>
+                <li class="editable">Gemini used only to translate between text and structured inputs, never to compute routes or scores</li>
+            </ul>
+
+            <h3 class="editable">Stack</h3>
+            <ul>
+                <li class="editable">Python, FastAPI, osmnx, Gemini API, Render deployment, JavaScript frontend</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="project">
+            <h2 class="editable">6. Circular-Economy Decision Copilot — LLM Agent for Packaging Decisions</h2>
+            <div class="project-meta">
+                <div><strong>Role:</strong> <span class="editable">Sole developer (personal project, extending an internship cost model)</span></div>
+                <div><strong>Status:</strong> <span class="editable">Code not public (built on partner data)</span></div>
+            </div>
+
+            <h3 class="editable">Overview</h3>
+            <p class="editable">An LLM assistant that lets users ask what-if questions about packaging cost decisions in plain language, and returns answers grounded in a cost model rather than in the model's own arithmetic.</p>
+
+            <h3 class="editable">Technical Approach</h3>
+            <ul>
+                <li class="editable">Cost model exposed as a FastAPI service, called by an agent through tool calling</li>
+                <li class="editable">Retrieval over public regulatory documents, with source citations</li>
+                <li class="editable">Evaluation set and guardrails that check every figure against tool outputs</li>
+            </ul>
+
+            <h3 class="editable">Stack</h3>
+            <ul>
+                <li class="editable">Python, FastAPI, LangChain, embeddings and vector search, Docker, GitHub Actions, Langfuse tracing</li>
+            </ul>
+        </div>
+
         <footer>
-            <p class="editable">All projects are open source and available on GitHub at <strong>github.com/fleurine-jaegler</strong></p>
+            <p class="editable">All projects are open source and available on GitHub at <strong>github.com/fleurinejaegler</strong></p>
         </footer>
     </div>
 </body>
